@@ -23,6 +23,7 @@
             }
         }
 
+
         public void AddScore(int score)
         {
             this.score += score;

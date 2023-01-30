@@ -30,26 +30,26 @@ if (employee0.Score > employee1.Score)
 {
     if (employee0.Score > employee2.Score)
     {
-        theBest(0);
+        PrintTheBest(0);
     }
     else
     {
-        theBest(2); 
+        PrintTheBest(2); 
     }
 }
 else
 {
     if (employee0.Score > employee2.Score)
     {
-        theBest(1);
+        PrintTheBest(1);
     }
     else
     { 
-        theBest(2); 
+        PrintTheBest(2); 
     }
 }
 
-void theBest(int i)
+void PrintTheBest(int i)
 {
     Console.WriteLine("Najwyższą liczbę ocen posiada uzytkownik:");
     Console.WriteLine(list[i].name + " " + list[i].surname + " " + "lat " +list[i].age);
