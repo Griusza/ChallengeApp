@@ -1,22 +1,57 @@
-﻿var number = 51882220;
-var numberInString = number.ToString();
-char[] letters = numberInString.ToArray();
-char[] arrayChar = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
-int[] result = new int[10]; 
+﻿using ChallengeApp;
 
-foreach (char c in letters)
+Employee employee0 = new Employee("Andrzej", "Stefaniak", 37);
+Employee employee1 = new Employee("Michał", "Wielki", 24);
+Employee employee2 = new Employee("Kasia", "Kowalska", 30);
+List<Employee> list = new List<Employee>();
+list.Add(employee0);
+list.Add(employee1);
+list.Add(employee2);
+
+employee0.AddScore(4);
+employee0.AddScore(2);
+employee0.AddScore(7);
+employee0.AddScore(9);
+employee0.AddScore(1);
+
+employee1.AddScore(7);
+employee1.AddScore(2);
+employee1.AddScore(1);
+employee1.AddScore(9);
+employee1.AddScore(9);
+
+employee2.AddScore(3);
+employee2.AddScore(5);
+employee2.AddScore(1);
+employee2.AddScore(9);
+employee2.AddScore(1);
+
+if (employee0.Score > employee1.Score)
 {
-    for (int j=0; j<10; j++)
+    if (employee0.Score > employee2.Score)
     {
-        if (c == arrayChar[j])
-        {
-            result[j]++;
-            break;
-        }
+        theBest(0);
+    }
+    else
+    {
+        theBest(2); 
+    }
+}
+else
+{
+    if (employee0.Score > employee2.Score)
+    {
+        theBest(1);
+    }
+    else
+    { 
+        theBest(2); 
     }
 }
 
-for(var i=0; i<10; i++)
+void theBest(int i)
 {
-    Console.WriteLine(i + " => " + result[i]);
+    Console.WriteLine("Najwyższą liczbę ocen posiada uzytkownik:");
+    Console.WriteLine(list[i].name + " " + list[i].surname + " " + "lat " +list[i].age);
+    Console.WriteLine("Jego wynik to: " + list[i].Score);
 }
