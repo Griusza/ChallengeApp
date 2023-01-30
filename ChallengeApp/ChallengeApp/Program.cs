@@ -1,22 +1,22 @@
-﻿string name = "Andrzej";
-char sex = 'm';
-int age = 37;
+﻿var number = 51882220;
+var numberInString = number.ToString();
+char[] letters = numberInString.ToArray();
+char[] arrayChar = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+int[] result = new int[10]; 
 
-if (sex == 'f')
+foreach (char c in letters)
 {
-    if (age == 33 && name == "Ewa")
+    for (int j=0; j<10; j++)
     {
-        Console.WriteLine("Ewa, lat 33");
+        if (c == arrayChar[j])
+        {
+            result[j]++;
+            break;
+        }
     }
-    else if (age < 30)
-    {
-        Console.WriteLine("Kobieta poniżej 30 lat");
-    }
-    else Console.WriteLine("Kobieta powyżej 30 lat");
+}
 
-}
-else if (age < 18 && sex == 'm')
+for(var i=0; i<10; i++)
 {
-    Console.WriteLine("Niepełnoletni mężczyzna");
+    Console.WriteLine(i + " => " + result[i]);
 }
-else Console.WriteLine("Pełnoletni mężczyzna");
